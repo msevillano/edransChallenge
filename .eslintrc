@@ -1,0 +1,15 @@
+{
+  "parser": "babel-eslint",
+  "extends": "google",
+  "parserOptions": {
+    "ecmaVersion": 2017,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "rules": {
+    "no-console": 2,
+    "max-len": [2, 120]
+  }
+}

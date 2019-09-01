@@ -1,0 +1,49 @@
+{
+  "name": "koa-boilerplate",
+  "version": "1.0.0",
+  "description": "Basic template for Koa project",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node dist/server.js",
+    "start:dev": "babel-watch ./src/server.js",
+    "build": "babel src --out-dir dist",
+    "test": "jest --coverage",
+    "lint": "eslint --fix '**/*.js'"
+  },
+  "pre-commit": [
+    "lint",
+    "test"
+  ],
+  "keywords": [
+    "koa",
+    "node.JS",
+    "ES6",
+    "Jest",
+    "template",
+    "boilerplate"
+  ],
+  "author": "Mauro Sevillano",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/msevillano/koaBoilerplate"
+  },
+  "dependencies": {
+    "js-yaml": "^3.13.1",
+    "koa": "^2.7.0",
+    "koa-router": "^7.4.0",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-eslint": "^10.0.2",
+    "babel-watch": "^7.0.0",
+    "eslint": "^6.0.1",
+    "eslint-config-google": "^0.13.0",
+    "jest": "^24.8.0",
+    "jsdoc": "^3.6.3",
+    "pre-commit": "^1.2.2"
+  }
+}
