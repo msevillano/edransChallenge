@@ -1,7 +1,7 @@
 {
-  "name": "koa-boilerplate",
+  "name": "edrans-challenge",
   "version": "1.0.0",
-  "description": "Basic template for Koa project",
+  "description": "Edrans hiring Challenge",
   "main": "src/server.js",
   "scripts": {
     "start": "node dist/server.js",
@@ -14,19 +14,11 @@
     "lint",
     "test"
   ],
-  "keywords": [
-    "koa",
-    "node.JS",
-    "ES6",
-    "Jest",
-    "template",
-    "boilerplate"
-  ],
   "author": "Mauro Sevillano",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/msevillano/koaBoilerplate"
+    "url": "https://github.com/msevillano/edransChallenge"
   },
   "dependencies": {
     "js-yaml": "^3.13.1",
@@ -40,7 +32,7 @@
     "@babel/preset-env": "^7.5.5",
     "babel-eslint": "^10.0.2",
     "babel-watch": "^7.0.0",
-    "eslint": "^6.0.1",
+    "eslint": "^6.3.0",
     "eslint-config-google": "^0.13.0",
     "jest": "^24.8.0",
     "jsdoc": "^3.6.3",
