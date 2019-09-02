@@ -24,3 +24,13 @@ La idea es que crees un proyecto en GitHub (apreciamos que vayas commiteando a m
 proyecto). Que incluyas documentación de como ejecutar y consumir la API.
 En la medida de lo posible incluir los Test
 Y una colección de postman mejor.
+
+## Consideraciones
+
+Se comenzó el challenge basándome en un template pre-existente (de mi autoría) con un servidor de Node, basado en Koa y
+con Babel para poder usar los syntax sugars que considere prácticos(import/export, spread operator, etc.)
+
+Dado que el como se generan las carreras/materias esta fuera del scope del challenge los mismos se podrán generar a
+partir de endpoint sin autenticación (nótese que eso bajo ningún punto de vista debería llegar a un entorno de 
+producción). Los mismos deberían requerir un autorizationToken de un manager o algo similar para validar que quien esta 
+creando las materias/carreras tiene permisos para hacerlo. 

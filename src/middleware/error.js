@@ -8,9 +8,15 @@ async function errorHandler(ctx, next) {
   try {
     await next();
   } catch (err) {
-    ctx.status = err.status || 500;
-    ctx.body = err.message || 'internal server error';
-    logger.error(err);
+    if (err.httpCode) {
+      ctx.status = err.httpCode;
+      ctx.body = err.message;
+    } else {
+      ctx.status = 500;
+      ctx.body ='internal server error';
+    }
+    if (ctx.status < 500) logger.warn(err.message);
+    else logger.error(err.message);
   }
 }
 

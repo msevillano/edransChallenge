@@ -21,9 +21,12 @@
     "url": "https://github.com/msevillano/edransChallenge"
   },
   "dependencies": {
+    "bcrypt": "^3.0.6",
     "js-yaml": "^3.13.1",
     "koa": "^2.7.0",
+    "koa-bodyparser": "^4.2.1",
     "koa-router": "^7.4.0",
+    "mongoose": "^5.6.11",
     "winston": "^3.2.1"
   },
   "devDependencies": {

@@ -13,7 +13,7 @@ test('errorHandler(ctx, next): it should execute next correctly', async () => {
   const ctx = {};
   const next = jest.fn(async () => {
     const error = new Error();
-    error.status = 400;
+    error.httpCode = 400;
     error.message = 'userError';
     throw error;
   });
