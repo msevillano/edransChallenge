@@ -11,5 +11,5 @@ export default async function create(ctx, next) {
   ctx.body = {
     id: createdSubject._id,
   };
-  next();
+  await next();
 }

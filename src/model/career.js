@@ -6,8 +6,8 @@ const CareerSchema = new mongoose.Schema({
     required: true,
   },
   subjects: [{
-    type: ObjectId,
-    ref: 'User',
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Subject',
   }],
 });
 

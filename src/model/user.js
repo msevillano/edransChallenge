@@ -27,6 +27,18 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  career: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Career',
+  },
+  currentSubjects: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Subject',
+  }],
+  approvedSubjects: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Subject',
+  }],
 });
 
 /**
@@ -35,6 +47,16 @@ const UserSchema = new mongoose.Schema({
  */
 UserSchema.methods.hashPassword = async function hashPassword(password) {
   this.password = await bcrypt.hash(password, 10);
+};
+
+/**
+ * checks if the password corresponds with the user.
+ * @param {String} password - password to compare.
+ *
+ * @return {Boolean} - the result of the comparision.
+ */
+UserSchema.methods.isValidPassword = async function isValidPassword(password) {
+  return bcrypt.compare(password, this.password);
 };
 
 const userModel = mongoose.model('user', UserSchema);

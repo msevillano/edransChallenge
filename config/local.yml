@@ -2,3 +2,5 @@ ENV: 'local'
 PORT: '4000'
 
 MONGO_DB: 'mongodb://localhost:27017/edrans'
+
+JWT_SECRET: 'BesT-s3CreT_3vEr'
