@@ -36,8 +36,15 @@ const UserSchema = new mongoose.Schema({
     ref: 'subject',
   }],
   approvedSubjects: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'subject',
+    subject: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'subject',
+      required: true,
+    },
+    grade: {
+      type: Number,
+      required: true,
+    },
   }],
 });
 

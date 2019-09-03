@@ -1,0 +1,260 @@
+{
+  "info": {
+    "_postman_id": "f1659548-f09c-4787-85c2-e4e0fa6a3a1c",
+    "name": "edransChallenge",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "user",
+      "item": [
+        {
+          "name": "create",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"email\": \"sevillano.mauro@gmail.com\",\n\t\"password\": \"123456\",\n\t\"firstName\": \"Mauro\",\n\t\"lastName\": \"Sevillano\",\n\t\"birthDate\": \"02-05-1993\",\n\t\"address\": \"calle falsa 123\"\n}"
+            },
+            "url": {
+              "raw": "{{server}}/user/create",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "user",
+                "create"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"userName\": \"sevillano.mauro@gmail.com\",\n\t\"password\": \"123456\"\n}"
+            },
+            "url": {
+              "raw": "{{server}}/user/login",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "user",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "setCareer",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXJyZW50U3ViamVjdHMiOltdLCJhcHByb3ZlZFN1YmplY3RzIjpbXSwiX2lkIjoiNWQ2ZGFhYmVhNzM1NzM0MWVmMWI0YTUyIiwiZW1haWwiOiJzZXZpbGxhbm8ubWF1cm9AZ21haWwuY29tIiwiZmlyc3ROYW1lIjoiTWF1cm8iLCJsYXN0TmFtZSI6IlNldmlsbGFubyIsImJpcnRoRGF0ZSI6IjE5OTMtMDItMDVUMDI6MDA6MDAuMDAwWiIsImFkZHJlc3MiOiJjYWxsZSBmYWxzYSAxMjMiLCJfX3YiOjAsImNhcmVlciI6IjVkNmRhNzM4YTk3MWUyNDE2MGZhZWZjMyIsImlhdCI6MTU2NzQ4MzA3Nn0.ktQ30eb0tGlU52Alpr9Z5wV0beidTySfepZvCYuCk6Q",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"careerId\": \"5d6da738a971e24160faefc3\"\n}"
+            },
+            "url": {
+              "raw": "{{server}}/user/auth/career",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "user",
+                "auth",
+                "career"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "startSubjects",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXJyZW50U3ViamVjdHMiOltdLCJhcHByb3ZlZFN1YmplY3RzIjpbXSwiX2lkIjoiNWQ2ZGZjYjdjYjdmNDI1M2I2YmViMzNhIiwiZW1haWwiOiJzZXZpbGxhbm8ubWF1cm9AZ21haWwuY29tIiwiZmlyc3ROYW1lIjoiTWF1cm8iLCJsYXN0TmFtZSI6IlNldmlsbGFubyIsImJpcnRoRGF0ZSI6IjE5OTMtMDItMDVUMDI6MDA6MDAuMDAwWiIsImFkZHJlc3MiOiJjYWxsZSBmYWxzYSAxMjMiLCJfX3YiOjAsImlhdCI6MTU2NzQ4OTI0MH0.muoLcsv0nsJ1ca8f0KL1KlLG_D8JYjgFzl4OGNDua0s",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"subjects\": [\n\t\t\"5d6dfcbacb7f4253b6beb33b\",\n\t\t\"5d6dfcbacb7f4253b6beb33c\"\n\t]\n}"
+            },
+            "url": {
+              "raw": "{{server}}/user/auth/subjects",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "user",
+                "auth",
+                "subjects"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "updateGrades",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXJyZW50U3ViamVjdHMiOltdLCJhcHByb3ZlZFN1YmplY3RzIjpbXSwiX2lkIjoiNWQ2ZGZjYjdjYjdmNDI1M2I2YmViMzNhIiwiZW1haWwiOiJzZXZpbGxhbm8ubWF1cm9AZ21haWwuY29tIiwiZmlyc3ROYW1lIjoiTWF1cm8iLCJsYXN0TmFtZSI6IlNldmlsbGFubyIsImJpcnRoRGF0ZSI6IjE5OTMtMDItMDVUMDI6MDA6MDAuMDAwWiIsImFkZHJlc3MiOiJjYWxsZSBmYWxzYSAxMjMiLCJfX3YiOjAsImlhdCI6MTU2NzQ4OTI0MH0.muoLcsv0nsJ1ca8f0KL1KlLG_D8JYjgFzl4OGNDua0s",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"5d6dfcbacb7f4253b6beb33b\": 2,\t\n\t\"5d6dfcbacb7f4253b6beb33c\": 4\t\n}"
+            },
+            "url": {
+              "raw": "{{server}}/user/auth/grade",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "user",
+                "auth",
+                "grade"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "subject",
+      "item": [
+        {
+          "name": "create",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"name\": \"maths 101\",\n\t\"hoursPerWeek\": \"10\"\n}"
+            },
+            "url": {
+              "raw": "{{server}}/subject/create",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "subject",
+                "create"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "career",
+      "item": [
+        {
+          "name": "create",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"name\": \"Bachelor in Maths\",\n\t\"subjects\": [\"5d6da6499c6b984133b6cb15\"]\n}"
+            },
+            "url": {
+              "raw": "{{server}}/career/create",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "career",
+                "create"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
