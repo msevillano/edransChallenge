@@ -19,6 +19,7 @@ export default async function login(ctx, next) {
   // eslint-disable-next-line no-unused-vars
   const {password, ...sanitizedUser} = {...user._doc};
   const authToken = createSignedToken(sanitizedUser);
+
   ctx.body = {token: authToken, ...sanitizedUser};
   await next();
 }

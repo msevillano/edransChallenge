@@ -29,15 +29,15 @@ const UserSchema = new mongoose.Schema({
   },
   career: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Career',
+    ref: 'career',
   },
   currentSubjects: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Subject',
+    ref: 'subject',
   }],
   approvedSubjects: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Subject',
+    ref: 'subject',
   }],
 });
 
@@ -57,6 +57,17 @@ UserSchema.methods.hashPassword = async function hashPassword(password) {
  */
 UserSchema.methods.isValidPassword = async function isValidPassword(password) {
   return bcrypt.compare(password, this.password);
+};
+
+/**
+ * find an user and append its career
+ * since this is a simple wrapper it wont be tested.
+ * @param {String} _id - id of user to find.
+ *
+ * @return {Object} - User.
+ */
+UserSchema.statics.findWithCareer = async function findWithCareer(_id) {
+  return this.findById(_id).populate('career');
 };
 
 const userModel = mongoose.model('user', UserSchema);

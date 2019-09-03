@@ -38,3 +38,6 @@ creando las materias/carreras tiene permisos para hacerlo.
 En vista de las simplificaciones que se toman por los constraints de ser un code challenge, se optó por que un alumno
 tuviera el listado de materias a las que cursa, en un modelo de datos mas complejo, la materia tendría cursos y el
 alumno sería parte de estos.
+
+Teniendo en cuenta que no estan relevadas las entidades fuera del alumno (managers, profesores, etc.) el alumno podrá
+darse de alta e informar el estado de aprobación de las materias que curse.

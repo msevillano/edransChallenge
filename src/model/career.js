@@ -7,7 +7,7 @@ const CareerSchema = new mongoose.Schema({
   },
   subjects: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Subject',
+    ref: 'subject',
   }],
 });
 

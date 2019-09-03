@@ -14,10 +14,8 @@ test('setCareer(ctx, next): it should set the field career of the user with the 
     career: '5d6da738a971e24160faefc2',
   };
 
-  jest.spyOn(User, 'findOneAndUpdate')
-    .mockImplementationOnce(() => Promise.resolve(testUserData));
-  jest.spyOn(Career, 'findById')
-    .mockImplementationOnce(() => Promise.resolve({
+  jest.spyOn(User, 'findOneAndUpdate').mockImplementationOnce(() => Promise.resolve(testUserData));
+  jest.spyOn(Career, 'findById').mockImplementationOnce(() => Promise.resolve({
       _id: '5d6da738a971e24160faefc3',
       name: 'Bachelor in tests',
       subjects: ['5d6da6499c6b984133b6cb15']
@@ -51,10 +49,8 @@ test('setCareer(ctx, next): it should fail if cannot find the career on the db',
     career: '5d6da738a971e24160faefc2',
   };
 
-  jest.spyOn(User, 'findOneAndUpdate')
-    .mockImplementationOnce(() => Promise.resolve(testUserData));
-  jest.spyOn(Career, 'findById')
-    .mockImplementationOnce(() => Promise.resolve(null));
+  jest.spyOn(User, 'findOneAndUpdate').mockImplementationOnce(() => Promise.resolve(testUserData));
+  jest.spyOn(Career, 'findById').mockImplementationOnce(() => Promise.resolve(null));
 
   const ctx = {
     request: {

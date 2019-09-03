@@ -11,10 +11,8 @@ test('login(ctx, next): it should validate credentials, create a JWT, then call 
     address: 'test address'
   };
 
-  jest.spyOn(User, 'findOne')
-    .mockImplementationOnce(() => Promise.resolve(new User(testUserData)));
-  jest.spyOn(User.prototype, 'isValidPassword')
-     .mockImplementationOnce(() => Promise.resolve(true));
+  jest.spyOn(User, 'findOne').mockImplementationOnce(() => Promise.resolve(new User(testUserData)));
+  jest.spyOn(User.prototype, 'isValidPassword').mockImplementationOnce(() => Promise.resolve(true));
 
   const ctx = {
     request: {
@@ -67,10 +65,8 @@ test('login(ctx, next): it should validate credentials, fail on missing user', a
     address: 'test address'
   };
 
-  jest.spyOn(User, 'findOne')
-    .mockImplementationOnce(() => Promise.resolve(null));
-  jest.spyOn(User.prototype, 'isValidPassword')
-    .mockImplementationOnce(() => Promise.resolve(false));
+  jest.spyOn(User, 'findOne').mockImplementationOnce(() => Promise.resolve(null));
+  jest.spyOn(User.prototype, 'isValidPassword').mockImplementationOnce(() => Promise.resolve(false));
 
   const ctx = {
     request: {
@@ -101,10 +97,8 @@ test('login(ctx, next): it should validate credentials, fail on invalid password
     address: 'test address'
   };
 
-  jest.spyOn(User, 'findOne')
-    .mockImplementationOnce(() => Promise.resolve(new User(testUserData)));
-  jest.spyOn(User.prototype, 'isValidPassword')
-    .mockImplementationOnce(() => Promise.resolve(true));
+  jest.spyOn(User, 'findOne').mockImplementationOnce(() => Promise.resolve(new User(testUserData)));
+  jest.spyOn(User.prototype, 'isValidPassword').mockImplementationOnce(() => Promise.resolve(true));
 
   const ctx = {
     request: {

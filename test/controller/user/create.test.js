@@ -10,10 +10,9 @@ test('create(ctx, next): it should create an user on DB returning its _id, then 
     birthDate: '01-01-2000',
     address: 'test address'
   };
-  jest.spyOn(User.prototype, 'save')
-    .mockImplementationOnce(() => Promise.resolve({
-      ...testUserData,
-    }));
+
+  jest.spyOn(User.prototype, 'save').mockImplementationOnce(() => Promise.resolve({...testUserData,}));
+
   const ctx = {
     request: {
       body: testUserData
@@ -36,11 +35,12 @@ test('create(ctx, next): it should fail because duplicated user', async () => {
     birthDate: '01-01-2000',
     address: 'test address'
   };
-  jest.spyOn(User.prototype, 'save')
-    .mockImplementationOnce(() => Promise.reject({
+
+  jest.spyOn(User.prototype, 'save').mockImplementationOnce(() => Promise.reject({
       name: 'MongoError',
       code: 11000,
     }));
+
   const ctx = {
     request: {
       body: testUserData
@@ -69,10 +69,11 @@ test('create(ctx, next): it should fail because parameter validation', async () 
     birthDate: '01-01-2000',
     address: 'test address'
   };
-  jest.spyOn(User.prototype, 'save')
-    .mockImplementationOnce(() => Promise.reject({
+
+  jest.spyOn(User.prototype, 'save').mockImplementationOnce(() => Promise.reject({
       name: 'ValidationError',
     }));
+
   const ctx = {
     request: {
       body: testUserData
@@ -101,10 +102,11 @@ test('create(ctx, next): it should fail wit an unknown error', async () => {
     birthDate: '01-01-2000',
     address: 'test address'
   };
-  jest.spyOn(User.prototype, 'save')
-    .mockImplementationOnce(() => Promise.reject({
+
+  jest.spyOn(User.prototype, 'save').mockImplementationOnce(() => Promise.reject({
       name: 'unknownError',
     }));
+
   const ctx = {
     request: {
       body: testUserData
@@ -112,7 +114,7 @@ test('create(ctx, next): it should fail wit an unknown error', async () => {
   };
   const next = jest.fn(() => {});
 
-  let errorMessage, errorCode;
+  let errorMessage;
   try {
     await createUser(ctx, next);
   } catch (e) {
