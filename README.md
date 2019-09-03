@@ -34,3 +34,7 @@ Dado que el como se generan las carreras/materias esta fuera del scope del chall
 partir de endpoint sin autenticación (nótese que eso bajo ningún punto de vista debería llegar a un entorno de 
 producción). Los mismos deberían requerir un autorizationToken de un manager o algo similar para validar que quien esta 
 creando las materias/carreras tiene permisos para hacerlo. 
+
+En vista de las simplificaciones que se toman por los constraints de ser un code challenge, se optó por que un alumno
+tuviera el listado de materias a las que cursa, en un modelo de datos mas complejo, la materia tendría cursos y el
+alumno sería parte de estos.
