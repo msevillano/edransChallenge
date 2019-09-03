@@ -42,10 +42,20 @@ alumno sería parte de estos.
 Teniendo en cuenta que no estan relevadas las entidades fuera del alumno (managers, profesores, etc.) el alumno podrá
 darse de alta e informar el estado de aprobación de las materias que curse.
 
+## How to use
+El caso de uso para este challenge es el siguiente, primero se deben generar un grupo de materias.
+Luego con esta 1 o mas carreras.
+Y por ultimo 1 o mas usuarios.
+
+En este punto cada usuario puede anotarse en la carrera que desee, despues de haberse anotado en una de las carreras
+puede anotarse en las asignaturas de la carrera que desee cursar.
+
+y por ultimo cada usuario puede informar las notas obtenidas en cada materia.
+
 ##Datos a tener en cuenta para probar el funcionamiento
 En el root del proyecto hay un archivo JSON que contiene la colección de postman utilizada para probar el servidor.
 
 El Dockerfile genera 2 imagenes (una builder image, y el server en si) se debe utilizar esta última.
 
 en `/config/local.yml` se debe cargar el connectionString para la base de datos que se quiera utilizar, (se puede
-generar un archivo nuevo y correr el servidor con el process.Env = al nombre del archivo)
+generar un archivo nuevo y correr el servidor con el process.Env = al nombre del archivo).
